@@ -1,4 +1,4 @@
-%load('data_SFcrime_test.mat'); % (dataset from kaggle: https://www.kaggle.com/c/sf-crime)
+%load('data_SFcrime_test.mat');
 load('data_SFcrime_train.mat');
 H = hour(Dates);
 
