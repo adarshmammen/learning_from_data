@@ -7,13 +7,14 @@ load fisheriris
 
 numbers = randperm(100);
 
+scores2 = (meas(numbers(1:75),:)*coeff;
 
 a = svmtrain(meas(numbers(1:75),:),species(numbers(1:75)));
-b = svmtrain(scores(numbers(1:75),1:2),species(numbers(1:75)));
-% using only 2 features
+b = svmtrain(scores2(numbers(1:75),:),species(numbers(1:75)));
+
 
 test1 = svmclassify(a, meas(numbers(76:100),:));
-test2 = svmclassify(b, scores(numbers(76:100),1:2));
+test2 = svmclassify(a, scores2(numbers(76:100),:));
 
 cp_non = classperf(species(numbers(76:100)),test1);
 cp_PCA = classperf(species(numbers(76:100)),test2); 
