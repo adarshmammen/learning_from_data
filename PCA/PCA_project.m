@@ -13,10 +13,9 @@ numbers_train = [1:5923 54052:60000];
 numbers_test = [1:980 8992:10000];
 j =1;
  
-options.MaxIter = 100000000;
-for k = 400:100:700
+for k = 300:100:700
  
-a = svmtrain(X_train(numbers_train,:),Y_train(numbers_train),'kernelcachelimit',200000,'autoscale','false','Options',options);
+a = svmtrain(X_train(numbers_train,:),Y_train(numbers_train),'kernelcachelimit',200000,'autoscale','false');
 b = svmtrain(scores(numbers_train,1:k),Y_train(numbers_train),'autoscale','false');
 % using only 2 features
  
